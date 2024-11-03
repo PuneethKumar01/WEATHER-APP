@@ -48,19 +48,21 @@ const page = () => {
 
   return (
     <>
-      <header className='bg-black text-white h-16  font-bold text-4xl text-center py-2 mb-12 w-full'>Weather App</header>
+      <header className='bg-black text-white h-16  font-bold text-4xl text-center py-2 mb-14 w-full'>Weather App</header>
       <main>
 
         <form onSubmit={(e) => {
           e.preventDefault();
-        }} className='flex justify-center mb-20' >
-          <input type="text" className='border-4 rounded-lg px-4 py-2 text-xl mr-14' placeholder='CITY...' onChange={(e) => {
+        }}  >
+          <div className='responsive flex m-auto'>
+          <input type="text" className='border-4 rounded-lg px-4 py-2 text-xl w-64' placeholder='CITY...' onChange={(e) => {
             setLocation(e.target.value)
           }} />
-          <button className='bg-black text-white text-2xl px-4 py-2 rounded-lg font-semibold' onClick={() => {
+          <button className='bg-black text-white text-2xl px-4 py-2 rounded-lg font-semibold w-28 items-center' onClick={() => {
             console.log(location)
             sun(location)
           }}>Submit</button>
+          </div>
         </form>
         <div className=' p-5'>
           {weatherResult}
