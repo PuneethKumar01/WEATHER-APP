@@ -25,7 +25,7 @@ const page = () => {
 
   return (
     <>
-      <header className='bg-black text-white h-16  font-bold text-4xl text-center py-2 mb-12 w-full'>Weather App</header>
+      <header className='bg-black text-white h-16  font-bold text-4xl text-center py-2 mb-14 w-full'>Weather App</header>
       <main>
         <form onSubmit={(e) => {
           e.preventDefault();
