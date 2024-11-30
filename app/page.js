@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from 'react'
-import { FaPodcast, FaSearch } from "react-icons/fa";
+import {FaSearch } from "react-icons/fa";
 
 const page = () => {
 
@@ -35,10 +35,13 @@ const page = () => {
         console.log(res);
         let weatherObject = await res.json()
         console.log(weatherObject)
+        
+        // to get exact address of place mentioned
         let address = await fetch(`https://geocode.maps.co/reverse?lat=${weatherObject.coord.lat}&lon=${weatherObject.coord.lon}&units=metric&api_key=${'672460df18a97492686832tpj473b0d'}`)
         let finalAddress = await address.json();
         console.log(finalAddress);
 
+        //working in this
         let fiveDayForecast = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${weatherObject.coord.lat}&lon=${weatherObject.coord.lon}&appid=${'aedb9cd52d9f17211801b18c296851e8'}`)
         console.log('fire');
         console.log(fiveDayForecast);
@@ -66,10 +69,7 @@ const page = () => {
 
   }
 
-
   // to get user present location
-
-
   const getUserLocation = () => {
     if ('geolocation' in navigator) {
       navigator.geolocation.getCurrentPosition(
